@@ -17,6 +17,9 @@
 import webapp2
 import jinja2
 import os
+import json
+import urllib2
+import urllib
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
