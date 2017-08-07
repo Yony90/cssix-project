@@ -26,7 +26,13 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write('Hello world!')
         template = jinja_environment.get_template('templates/main-html.html')
         self.response.out.write(template.render())
+class SecondHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write('Subject Search Page!')
+        template = jinja_environment.get_template('templates/SubjectSearch.html')
+        self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
+    ('/python-resources', SecondHandler) 
 ], debug=True)
