@@ -23,7 +23,6 @@ jinja_environment = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
         template = jinja_environment.get_template('templates/main-html.html')
         self.response.out.write(template.render())
 class SecondHandler(webapp2.RequestHandler):
