@@ -33,6 +33,6 @@ class SecondHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-    ('/python-resources', SecondHandler) 
+    ('/', MainHandler),
+    ('/python-resources', SecondHandler)
 ], debug=True)
