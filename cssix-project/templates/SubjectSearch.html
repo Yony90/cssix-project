@@ -53,9 +53,11 @@
   .show {display:block;}
   </style>
   <body>
-
+    <h1>
+      {{ lang }}
+    </h1>
   <input type="button" value="Menu" onclick="window.location.href='/'"/>
-    <center><img src="https://techspawn.com/wp-content/uploads/2016/10/Python_logo.png" height="128" ></center>
+    <center><img src={{ pngLink }} height="128" ></center>
     <center>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Articles</button>
