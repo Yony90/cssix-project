@@ -25,7 +25,6 @@ jinja_environment = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
         template = jinja_environment.get_template('templates/main-html.html')
 
         postSubjects = ['cplusplus', 'python', 'javascript']
@@ -37,7 +36,7 @@ class MainHandler(webapp2.RequestHandler):
             postDictionary[postSubjects[x]] = postInfo[x]
 
         self.response.out.write(template.render())
-        
+
 class SecondHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Subject Search Page!')
