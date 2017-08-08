@@ -7,13 +7,15 @@
   <body>
 
     <h1>Post</h1>
-
     <div>
 
-      <form>
-        <input type="button" value="Python" onclick="window.location.href='/python-resources'" />
-        <input type="button" value="C++" onclick="window.location.href='/C++-resources'" />
-        <input type="button" value="JavaScript" onclick="window.location.href='/JavaScript-resources'" />
+      <form method="post" action="">
+        <select>
+          <option value="python" name="lang">Python</option>
+        </select>
+        <input type="submit"/>
+        <input type="button" value="C++" name="lang"/>
+        <input type="button" value="JavaScript" onclick="window.location.href='/resources/'" />
       </form>
 
     </div>

@@ -34,17 +34,25 @@ class MainHandler(webapp2.RequestHandler):
         postDictionary = {}
         for x in range(len(postSubjects)):
             postDictionary[postSubjects[x]] = postInfo[x]
+        # lang = BlogPost(subject=self.request.get('lang'))
+
+
 
         self.response.out.write(template.render())
+        
+    def post(self):
+        temp_dict = self.request.get('lang')
+        print "PRINT ??????" + temp_dict
 
 class SecondHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Subject Search Page!')
         template = jinja_environment.get_template('templates/SubjectSearch.html')
+        lang = self.request.get('lang')
+        print "PRINT ???? "+ lang
+
         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/python-resources', SecondHandler),
-    ('/blog-posts', BlogPost)
+    ('/resources', SecondHandler)
 ], debug=True)
