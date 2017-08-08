@@ -54,17 +54,20 @@
   </style>
   <body>
 
-  <input type="button" value="Menu" onclick="window.location.href='/'"/>
+      <input type="button" value="Menu" class= "dropbtn" onclick="window.location.href='/'"/>
+
     <center><img src="https://techspawn.com/wp-content/uploads/2016/10/Python_logo.png" height="128" ></center>
     <center>
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Articles</button>
-        <div id="mySecondDropdown" class="dropdown-content">
-          <a href="/python-resources">Python</a>
-          <a href="/">Cs++</a>
-          <a href="/">JavaScript</a>
-        </div>
-      </div>
+      <div>
+
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Resources</button>
+    <div id="myDropdown" class="dropdown-content">
+    <a href ="/">Articles</a>
+    <a href="/">Videos</a>
+    <a href="/">Tips</a>
+    </div>
+  </div>
     </center>
       <script src="resources/main_html.js"></script>
   </body>
