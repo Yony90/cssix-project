@@ -46,15 +46,23 @@ class SecondHandler(webapp2.RequestHandler):
         lang_info = {
           'python': {
              'lang': 'Python',
-             'pngLink': 'https://techspawn.com/wp-content/uploads/2016/10/Python_logo.png'
+             'pngLink': 'https://techspawn.com/wp-content/uploads/2016/10/Python_logo.png',
+             'subjectList': [],
+             'textList': [],
           },
           'cplusplus': {
              'lang': 'C++',
-             'pngLink': "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/C_plus_plus.svg/1200px-C_plus_plus.svg.png"
+             'pngLink': "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/C_plus_plus.svg/1200px-C_plus_plus.svg.png",
+             'subjectList': [],
+             'textList': [],
+
           },
           'javascript': {
              'lang': 'JavaScript',
-             'pngLink': "http://dev.brackets.io/preso/intro/assets/js.jpg"
+             'pngLink': "http://dev.brackets.io/preso/intro/assets/js.jpg",
+             'subjectList': [],
+             'textList': [],
+
           }
         }
         #create sub-dictionary from lang_info dicitonary
@@ -63,11 +71,12 @@ class SecondHandler(webapp2.RequestHandler):
         #create query and filter
         items_query = BlogPost.query()
         test = items_query.filter(subjectInfo['lang'] == BlogPost.subject)
-        print test
         items = test.fetch()
-        print items
+
         for item in items:
-            print item.text
+            subjectInfo["textList"].append(item)
+
+
         # query_filtered = items.filter("subject IN", lang)
         # for item in items:
         #     if lang in item.

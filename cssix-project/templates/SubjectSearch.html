@@ -51,6 +51,13 @@
 
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+  #greyback{
+    background-color: grey;
+    margin-top: 1em;
+    margin-left: 10em;
+    margin-right: 10em;
+  }
   </style>
   <body>
 
@@ -67,7 +74,21 @@
 <a href="/">Tips </a>
     </div>
   </div>
+
+
+
     </center>
+
+    <div id="greyback">
+      <center>
+        <ul>
+          {% for text in textList %}
+            <li> {{ text.text }} </li>
+          {% endfor %}
+      </ul>
+    </center>
+    </div>
+
       <script src="resources/main_html.js"></script>
   </body>
 </html>
