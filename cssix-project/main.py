@@ -46,15 +46,15 @@ class SecondHandler(webapp2.RequestHandler):
         lang_info = {
           'python': {
              'lang': 'Python',
-             'pngLink': 'https://techspawn.com/wp-content/uploads/2016/10/Python_logo.png'
+             'pngLink': 'https://www.python.org/static/img/python-logo.png'
           },
           'cplusplus': {
              'lang': 'C++',
-             'pngLink': "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/C_plus_plus.svg/1200px-C_plus_plus.svg.png"
+             'pngLink': "http://vdksoft.github.io/signals/assets/img/c-logo.png"
           },
           'javascript': {
              'lang': 'JavaScript',
-             'pngLink': "https://cdn-images-1.medium.com/max/1600/1*ot7tWiPCYC01pV0kGmK3qQ.png"
+             'pngLink': "http://dev.brackets.io/preso/intro/assets/js.jpg"
           }
         }
         #create sub-dictionary from lang_info dicitonary
