@@ -54,7 +54,7 @@ class SecondHandler(webapp2.RequestHandler):
           },
           'javascript': {
              'lang': 'JavaScript',
-             'pngLink': "https://cdn-images-1.medium.com/max/1600/1*ot7tWiPCYC01pV0kGmK3qQ.png"
+             'pngLink': "http://dev.brackets.io/preso/intro/assets/js.jpg"
           }
         }
         #create sub-dictionary from lang_info dicitonary
