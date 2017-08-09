@@ -20,31 +20,29 @@ import os
 import logging
 from BlogPost import BlogPost
 
+#Set up Jinja Environment
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/main-html.html')
-
-
-        postInfoList = ['C++ is an object-oriented programming (OOP) language that is viewed by many as the best language for creating large-scale applications. C++ is a superset of the C language.',
-        "An interpreted language, Python has a design philosophy that emphasizes code readability (notably using whitespace indentation to delimit code blocks rather than curly brackets or keywords), and a syntax that allows programmers to express concepts in fewer lines of code than might be used in languages such as C++",
-        "an object-oriented computer programming language commonly used to create interactive effects within web browsers."]
-
         self.response.out.write(template.render())
+
+
     def post(self):
+        #Post info to DataStore
         blogPostInfo = BlogPost(subject=self.request.get('blogPostSubject'),text=self.request.get('blogPostText'))
         blogPostInfo.put()
-
+        #Redirect back to main page to avoid blank page
         self.redirect('/')
 
 class SecondHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/SubjectSearch.html')
-
+        #grab language from GET
         lang = self.request.get('lang')
-
+        #set up dictionary to mae dynamic template
         lang_info = {
           'python': {
              'lang': 'Python',
@@ -59,9 +57,10 @@ class SecondHandler(webapp2.RequestHandler):
              'pngLink': "https://cdn-images-1.medium.com/max/1600/1*ot7tWiPCYC01pV0kGmK3qQ.png"
           }
         }
-
+        #create sub-dictionary from lang_info dicitonary
         subjectInfo = lang_info[lang] #{ lang : pngLink }
 
+        #create query and filter
         items_query = BlogPost.query()
         test = items_query.filter(subjectInfo['lang'] == BlogPost.subject)
         print test
