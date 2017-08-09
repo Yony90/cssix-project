@@ -60,14 +60,27 @@ class SecondHandler(webapp2.RequestHandler):
           }
         }
 
-        subjectInfo = lang_info[lang]
-
-        self.response.out.write(template.render(subjectInfo))
+        subjectInfo = lang_info[lang] #{ lang : pngLink }
 
         items_query = BlogPost.query()
-        items = items_query.fetch()
-        logging.info(items)
+        test = items_query.filter(subjectInfo['lang'] == BlogPost.subject)
+        print test
+        items = test.fetch()
+        print items
+        for item in items:
+            print item.text
+        # query_filtered = items.filter("subject IN", lang)
+        # for item in items:
+        #     if lang in item.
+        #     for txt in item:
+        #         print txt
+        # query_filtered = items_query.filter("subject IN", lang)
 
+        # items = query_filtered.fetch()
+
+        # logging.info(items)
+
+        self.response.out.write(template.render(subjectInfo))
 #existing_item_query = ShoppingItem.query(ShoppingItem.name==item_name)
 #existing_item = existing_item_query.get()  --- for first item, use .fetch() for all
 #   if
