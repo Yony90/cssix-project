@@ -28,11 +28,16 @@ class MainHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/main-html.html')
 
 
-        postInfo = ['C++ is an object-oriented programming (OOP) language that is viewed by many as the best language for creating large-scale applications. C++ is a superset of the C language.',
+        postInfoList = ['C++ is an object-oriented programming (OOP) language that is viewed by many as the best language for creating large-scale applications. C++ is a superset of the C language.',
         "An interpreted language, Python has a design philosophy that emphasizes code readability (notably using whitespace indentation to delimit code blocks rather than curly brackets or keywords), and a syntax that allows programmers to express concepts in fewer lines of code than might be used in languages such as C++",
         "an object-oriented computer programming language commonly used to create interactive effects within web browsers."]
 
         self.response.out.write(template.render())
+    def post(self):
+        blogPostInfo = BlogPost(subject=self.request.get('blogPostSubject'),text=self.request.get('blogPostText'))
+        blogPostInfo.put()
+
+        self.redirect('/')
 
 class SecondHandler(webapp2.RequestHandler):
     def get(self):
@@ -58,6 +63,14 @@ class SecondHandler(webapp2.RequestHandler):
         subjectInfo = lang_info[lang]
 
         self.response.out.write(template.render(subjectInfo))
+
+        items_query = BlogPost.query()
+        items = items_query.fetch()
+        logging.info(items)
+
+#existing_item_query = ShoppingItem.query(ShoppingItem.name==item_name)
+#existing_item = existing_item_query.get()  --- for first item, use .fetch() for all
+#   if
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
