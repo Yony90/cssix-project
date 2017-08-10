@@ -63,7 +63,8 @@ class SecondHandler(webapp2.RequestHandler):
              'pngLink': "http://dev.brackets.io/preso/intro/assets/js.jpg",
              'subjectList': [],
              'textList': [],
-             
+
+
           }
         }
         #create sub-dictionary from lang_info dicitonary
