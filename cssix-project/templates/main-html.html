@@ -69,7 +69,6 @@
   }
 #centerBox{
   background-color:#AAA;
-  background-color: #AAA;
   margin: 0em 10em 0em 10em;
   padding: 1em 1em 9.25em 1em;
 }
@@ -92,8 +91,8 @@
 }
 #mainPageTitle{
   display: inline;
-  margin-left: 5em;
   font-family: sans-serif;
+  font-size: 6
 }
 .container{
   margin-right: 33em;
@@ -107,7 +106,8 @@
 #resCheckboxes{
   margin-left: 3em;
 }
-  </style>
+
+</style>
 
 
   <body>
@@ -122,9 +122,9 @@
               <a href="/resources?lang=javascript">JavaScript</a>
             </div>
 
-          </div> <!-- dropdown -->
-          <h1 id="mainPageTitle"> The Resource Page </h1>
-        </div> <!-- redMenuBar -->
+          </div id='mainPageTitle'> <!-- dropdown -->
+            <h1>The Resource Page</h1>
+          </div><!-- redMenuBar -->
 
 
         <div>
@@ -139,6 +139,7 @@
 
               <form method="post" action="">
                 <div class="container">
+<<<<<<< HEAD
                             <h2 id ="containLang">Language</h2>
                             <input type="checkbox" id="a-option" name="selector">
                             <label for="f-option">Python</label>
@@ -149,24 +150,31 @@
                             <input type="checkbox" id="o-option" name="selector">
                             <label for="f-option" >JavaScript</label>
                           <br>
+=======
+                              <h2 id ="containLang">Language</h2>
+                              <input type="checkbox" id="a-option" name="selector">
+                              <label for="f-option">Python</label>
+>>>>>>> bd5e3c986136e10ee9cebee4feb6feb6b143a5a9
 
-                             <h2 id = "containRes">Resource</h3>
-                             <div id="resCheckboxes">
-                             <input type="checkbox" id="k-option" name="selector" >
-                             <label for="f-option">Articles</label>
+                              <input type="checkbox" id="l-option" name="selector">
+                              <label for="f-option">C++</label>
 
-                             <input type="checkbox" id="s-option" name="selector">
-                             <label for="s-option">Videos</label>
+                              <input type="checkbox" id="o-option" name="selector">
+                              <label for="f-option" >JavaScript</label>
 
+                              <h2 id = "containRes">Resource</h3>
+                              <div id="resCheckboxes">
+                              <input type="checkbox" id="k-option" name="selector" >
+                              <label for="f-option">Articles</label>
 
-                             <input type="checkbox" id="t-option" name="selector">
-                             <label for="t-option">Tips</label>
+                              <input type="checkbox" id="s-option" name="selector">
+                              <label for="s-option">Videos</label>
 
-                             <input type="checkbox" id="p-option" name="selector">
-                             <label for="p-option">Books</label>
-                           </div>
-
+                              <input type="checkbox" id="p-option" name="selector">
+                              <label for="p-option">Books</label>
                 </div>
+
+        </div>
                 <br>
                 <br>
                 <textarea rows="10" cols="60" name="blogPostText">Type resource here.</textarea>
