@@ -67,12 +67,24 @@
     color: White;
     text-align: center;
   }
-
 #centerBox{
   background-color: #AAA;
   margin: 0em 10em 0em 10em;
   padding: 1em 1em 9.25em 1em;
 }
+  .radiostyle {
+    background: black;
+    display: inline-block;
+  }
+  ul li {
+    color: #FFFFFF;
+    display: run-in;
+    position: inherit;
+    float: inherit;
+    width: 100%;
+    height: 100px;
+    font-weight: bold;
+  }
   </style>
 
 
@@ -95,16 +107,42 @@
 
               <form method="post" action="">
                 <textarea placeholder='Subject' rows="1" cols="60" name="blogPostSubject"></textarea>
-            <br>
+
+                <div class="container">
+                   <ul>
+                     <li>
+                       <input type="radio" id="f-option" name="selector">
+                       <label for="f-option">Articles</label>
+
+                       <div class="check"></div>
+                     </li>
+
+                     <li>
+                       <input type="radio" id="s-option" name="selector">
+                       <label for="s-option">Videos</label>
+
+                       <div class="check"><div class="inside"></div></div>
+                     </li>
+
+                     <li>
+                       <input type="radio" id="t-option" name="selector">
+                       <label for="t-option">Tips</label>
+
+                       <div class="check"><div class="inside"></div></div>
+                     </li>
+                  </ul>
+                </div>
+
                 <textarea rows="10" cols="60" name="blogPostText"></textarea>
             <br>
                 <input type="submit" id="submitButton" value= "Submit" class="dropbtn"/>
 
               </form>
+
               </center>
 
-
-
+            </div>
+            
           <script src="resources/main_html.js"></script>
 
           </div>
