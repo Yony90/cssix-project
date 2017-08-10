@@ -7,7 +7,7 @@
   </head>
  <style>
   body {
-    background-image:url("https://4kwallpapers.co/wp-content/uploads/2015/07/Red-Dark-Material-Design-Ultra-HD-Wallpaper.jpg");
+    background-image:url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-2.jpg");
     background-size: cover
   }
   /* Dropdown Button */
@@ -68,10 +68,17 @@
     text-align: center;
   }
 #centerBox{
+<<<<<<< HEAD
   background-color:#AAA;
+=======
+  background-color: #AAA;
+>>>>>>> bf863eac01776d8589ba60a598d7ada7136cf19b
   margin: 0em 10em 0em 10em;
   padding: 1em 1em 9.25em 1em;
 }
+<<<<<<< HEAD
+
+=======
   .radiostyle {
     background: black;
     display: inline-block;
@@ -85,11 +92,14 @@
     height: 100px;
     font-weight: bold;
   }
+>>>>>>> 9e992c68dd46e3e3e7c595a4439fd4eea42493e9
+
   </style>
 
 
   <body>
       <div id="centerBox">
+        <div id="redMenuBar">
           <div class="dropdown">
 
             <button onclick="myFunction()" class="dropbtn">Languages</button>
@@ -99,33 +109,46 @@
               <a href="/resources?lang=javascript">JavaScript</a>
             </div>
 
-          </div>
+          </div> <!-- dropdown -->
+        </div> <!-- redMenuBar -->
+
+
+        <div>
 
           <center>
               <h1>Post</h1>
             <br>
 
               <form method="post" action="">
-
                 <div class="container">
                 <textarea placeholder='Subject' rows="1" cols="42" name="blogPostSubject"></textarea>
 
+<br>
+                            <input type="checkbox" id="a-option" name="selector">
+                            <label for="f-option">Python</label>
 
-                             <input type="radio" id="f-option" name="selector">
+                            <input type="checkbox" id="l-option" name="selector">
+                            <label for="f-option">C++</label>
+
+                            <input type="checkbox" id="o-option" name="selector">
+                            <label for="f-option" >JavaScript</label>
+                          <br>
+
+
+                             <input type="checkbox" id="k-option" name="selector" >
                              <label for="f-option">Articles</label>
 
-                             <input type="radio" id="s-option" name="selector">
+                             <input type="checkbox" id="s-option" name="selector">
                              <label for="s-option">Videos</label>
 
 
-                             <input type="radio" id="t-option" name="selector">
+                             <input type="checkbox" id="t-option" name="selector">
                              <label for="t-option">Tips</label>
 
                              <input type="radio" id="t-option" name="selector">
                              <label for="t-option">Books</label>
 
                 </div>
-
                 <textarea rows="10" cols="60" name="blogPostText"></textarea>
             <br>
                 <input type="submit" id="submitButton" value= "Submit" class="dropbtn"/>
@@ -134,10 +157,9 @@
 
               </center>
 
-            </div>
+      </div> <!-- center -->
 
+    </div> <!-- centerBox -->
           <script src="resources/main_html.js"></script>
-
-          </div>
   </body>
 </html>
