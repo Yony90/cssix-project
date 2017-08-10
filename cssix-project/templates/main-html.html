@@ -16,7 +16,7 @@
       color: white;
       padding: 16px;
       font-size: 16px;
-      border: none;
+      border: None;
       cursor: pointer;
       border-radius: 30px;
   }
@@ -93,8 +93,20 @@
 #mainPageTitle{
   display: inline;
   margin-left: 5em;
+  font-family: sans-serif;
 }
-
+.container{
+  margin-right: 33em;
+}
+#containLang{
+  margin-right: 5em;
+}
+#containRes{
+  margin-right: 5em;
+}
+#resCheckboxes{
+  margin-left: 3em;
+}
   </style>
 
 
@@ -103,7 +115,7 @@
         <div id="redMenuBar">
           <div class="dropdown">
 
-            <button onclick="myFunction()" class="dropbtn">Languages</button>
+            <button onclick="myFunction()" class="dropbtn">Search Languages</button>
             <div id="myDropdown" class="dropdown-content">
               <a href ="/resources?lang=python">Python</a>
               <a href="/resources?lang=cplusplus">C++</a>
@@ -118,13 +130,16 @@
         <div>
 
           <center>
+            <br>
+            <br>
+            <br>
+            <br>
               <h1>Post</h1>
-
+              <hr>
 
               <form method="post" action="">
                 <div class="container">
-<br>
-                            <h2>Languages</h2>
+                            <h2 id ="containLang">Language</h2>
                             <input type="checkbox" id="a-option" name="selector">
                             <label for="f-option">Python</label>
 
@@ -133,10 +148,9 @@
 
                             <input type="checkbox" id="o-option" name="selector">
                             <label for="f-option" >JavaScript</label>
-                          <br>
-                          <br>
 
-                             <h3>Resources</h3>
+                             <h2 id = "containRes">Resource</h3>
+                             <div id="resCheckboxes">
                              <input type="checkbox" id="k-option" name="selector" >
                              <label for="f-option">Articles</label>
 
@@ -147,11 +161,14 @@
                              <input type="checkbox" id="t-option" name="selector">
                              <label for="t-option">Tips</label>
 
-                             <input type="checkbox" id="t-option" name="selector">
-                             <label for="t-option">Books</label>
+                             <input type="checkbox" id="p-option" name="selector">
+                             <label for="p-option">Books</label>
+                           </div>
 
                 </div>
-                <textarea rows="10" cols="60" name="blogPostText"></textarea>
+                <br>
+                <br>
+                <textarea rows="10" cols="60" name="blogPostText">Type resource here.</textarea>
             <br>
                 <input type="submit" id="submitButton" value= "Submit" class="dropbtn"/>
 
