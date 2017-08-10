@@ -46,13 +46,13 @@ class SecondHandler(webapp2.RequestHandler):
         lang_info = {
           'python': {
              'lang': 'Python',
-             'pngLink': 'https://techspawn.com/wp-content/uploads/2016/10/Python_logo.png',
+             'pngLink': 'https://www.python.org/static/img/python-logo.png',
              'subjectList': [],
              'textList': [],
           },
           'cplusplus': {
              'lang': 'C++',
-             'pngLink': "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/C_plus_plus.svg/1200px-C_plus_plus.svg.png",
+             'pngLink': "http://vdksoft.github.io/signals/assets/img/c-logo.png",
              'subjectList': [],
              'textList': [],
 
