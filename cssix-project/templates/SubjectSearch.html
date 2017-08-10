@@ -62,38 +62,45 @@
     margin-left: 10em;
     margin-right: 10em;
   }
+  #centerBox{
+    background-color:#AAA;
+    background-color: #AAA;
+    margin: 0em 10em 0em 10em;
+    padding: 1em 1em 9.25em 1em;
+  }
   </style>
   <body>
+    <div id="centerBox">
+          <input type="button" value="Menu" class="dropbtn" onclick="window.location.href='/'"/>
+            <center><img src={{ pngLink }} height="128" ></center>
+            <center>
+              <div>
 
-  <input type="button" value="Menu" class="dropbtn" onclick="window.location.href='/'"/>
-    <center><img src={{ pngLink }} height="128" ></center>
-    <center>
-      <div>
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Resources</button>
+            <div id="myDropdown" class="dropdown-content">
+        <a href ="{{pcj_articles}}">Articles </a>
+        <a href="{{pcj_videos}}">Videos </a>
+        <a href="{{pcj_tips}}">Tips </a>
+        <a href="{{pcj_books}}">Books</a>
+            </div>
+          </div>
 
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Resources</button>
-    <div id="myDropdown" class="dropdown-content">
-<a href ="{{pcj_articles}}">Articles </a>
-<a href="{{pcj_videos}}">Videos </a>
-<a href="{{pcj_tips}}">Tips </a>
-<a href="{{pcj_books}}">Books</a>
+
+
+            </center>
+
+            <div id="greyback">
+              <center>
+                <ul>
+                  {% for text in textList %}
+                    <li> {{ text.text }} </li>
+                  {% endfor %}
+              </ul>
+            </center>
+            </div>
+          </div>
     </div>
-  </div>
-
-
-
-    </center>
-
-    <div id="greyback">
-      <center>
-        <ul>
-          {% for text in textList %}
-            <li> {{ text.text }} </li>
-          {% endfor %}
-      </ul>
-    </center>
-    </div>
-
       <script src="resources/main_html.js"></script>
   </body>
 </html>
