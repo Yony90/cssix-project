@@ -49,6 +49,7 @@ class SecondHandler(webapp2.RequestHandler):
              'pngLink': 'https://www.python.org/static/img/python-logo.png',
              'subjectList': [],
              'textList': [],
+
           },
           'cplusplus': {
              'lang': 'C++',
@@ -62,7 +63,7 @@ class SecondHandler(webapp2.RequestHandler):
              'pngLink': "http://dev.brackets.io/preso/intro/assets/js.jpg",
              'subjectList': [],
              'textList': [],
-
+             
           }
         }
         #create sub-dictionary from lang_info dicitonary
