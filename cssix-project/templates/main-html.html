@@ -67,6 +67,20 @@
     color: White;
     text-align: center;
   }
+  .radiostyle {
+    background: black;
+    display: inline-block;
+  }
+  ul li {
+    color: #FFFFFF;
+    display: run-in;
+    position: inherit;
+    float: inherit;
+    width: 100%;
+    height: 100px;
+    font-weight: bold;
+  }
+
   </style>
   <body>
 
@@ -88,11 +102,38 @@
 <br>
 
   <form method="post" action="">
-    <textarea placeholder='Subject' rows="1" cols="60" name="blogPostSubject"></textarea>
-    <input type="resources" id="myDropdown" value= "Submit" class="dropbtn"/>
-    <a href ="/resources?lang=python">Articles</a>
-    <a href="/resources?lang=cplusplus">Videos</a>
-    <a href="/resources?lang=javascript">Tips</a>
+    <textarea placeholder='Subject' rows="1" cols="30" name="blogPostSubject"></textarea>
+    <!-- <input type="radio" name="gender" value="Article" checked> Male<br>
+  <input type="radio" name="gender" value="Video"> Female<br>
+  <input type="radio" name="gender" value="Tips"> Other -->
+
+</div>
+
+<div class="container">
+
+ <ul>
+ <li>
+   <input type="radio" id="f-option" name="selector">
+   <label for="f-option">Articles</label>
+
+   <div class="check"></div>
+ </li>
+
+ <li>
+   <input type="radio" id="s-option" name="selector">
+   <label for="s-option">Videos</label>
+
+   <div class="check"><div class="inside"></div></div>
+ </li>
+
+ <li>
+   <input type="radio" id="t-option" name="selector">
+   <label for="t-option">Tips</label>
+
+   <div class="check"><div class="inside"></div></div>
+ </li>
+</ul>
+</div>
 
 <br>
     <textarea rows="10" cols="60" name="blogPostText"></textarea>
