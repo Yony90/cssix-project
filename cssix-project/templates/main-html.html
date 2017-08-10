@@ -85,11 +85,16 @@
     height: 100px;
     font-weight: bold;
   }
+  #redMenuBar{
+    background-color: #;
+
+  }
   </style>
 
 
   <body>
       <div id="centerBox">
+        <div id="redMenuBar">
           <div class="dropdown">
 
             <button onclick="myFunction()" class="dropbtn">Languages</button>
@@ -99,30 +104,32 @@
               <a href="/resources?lang=javascript">JavaScript</a>
             </div>
 
-          </div>
+          </div> <!-- dropdown -->
+        </div> <!-- redMenuBar -->
+
+
+        <div>
 
           <center>
               <h1>Post</h1>
             <br>
 
               <form method="post" action="">
-
                 <div class="container">
                 <textarea placeholder='Subject' rows="1" cols="42" name="blogPostSubject"></textarea>
 
 
-                             <input type="radio" id="f-option" name="selector">
+                             <input type="checkbox" id="f-option" name="selector" >
                              <label for="f-option">Articles</label>
 
-                             <input type="radio" id="s-option" name="selector">
+                             <input type="checkbox" id="s-option" name="selector">
                              <label for="s-option">Videos</label>
 
 
-                             <input type="radio" id="t-option" name="selector">
+                             <input type="checkbox" id="t-option" name="selector">
                              <label for="t-option">Tips</label>
 
                 </div>
-
                 <textarea rows="10" cols="60" name="blogPostText"></textarea>
             <br>
                 <input type="submit" id="submitButton" value= "Submit" class="dropbtn"/>
@@ -131,10 +138,9 @@
 
               </center>
 
-            </div>
+      </div> <!-- center -->
 
+    </div> <!-- centerBox -->
           <script src="resources/main_html.js"></script>
-
-          </div>
   </body>
 </html>
