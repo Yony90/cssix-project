@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Coding Resources</title>
   </head>
- <center> <style>
+ <style>
   body {
     background-image:url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-2.jpg");
     background-size: cover
@@ -67,35 +67,74 @@
     color: White;
     text-align: center;
   }
+#centerBox{
+  background-color: #AAA;
+  margin: 0em 10em 0em 10em;
+  padding: 1em 1em 9.25em 1em;
+}
+  .radiostyle {
+    background: black;
+    display: inline-block;
+  }
+  ul li {
+    color: #FFFFFF;
+    display: run-in;
+    position: inherit;
+    float: inherit;
+    width: 100%;
+    height: 100px;
+    font-weight: bold;
+  }
   </style>
+
+
   <body>
+      <div id="centerBox">
+          <div class="dropdown">
+
+            <button onclick="myFunction()" class="dropbtn">Languages</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href ="/resources?lang=python">Python</a>
+              <a href="/resources?lang=cplusplus">C++</a>
+              <a href="/resources?lang=javascript">JavaScript</a>
+            </div>
+
+          </div>
+
+          <center>
+              <h1>Post</h1>
+            <br>
+
+              <form method="post" action="">
+
+                <div class="container">
+                <textarea placeholder='Subject' rows="1" cols="42" name="blogPostSubject"></textarea>
 
 
+                             <input type="radio" id="f-option" name="selector">
+                             <label for="f-option">Articles</label>
 
-    <div>
+                             <input type="radio" id="s-option" name="selector">
+                             <label for="s-option">Videos</label>
 
-<div class="dropdown"></center>
-  <button onclick="myFunction()" class="dropbtn">Languages</button>
-<center> <div id="myDropdown" class="dropdown-content">
-    <a href ="/resources?lang=python">Python</a>
-    <a href="/resources?lang=cplusplus">C++</a>
-    <a href="/resources?lang=javascript">JavaScript</a>
-  </div>
-</div>
 
-<br>
-  <h1>Post</h1>
-<br>
+                             <input type="radio" id="t-option" name="selector">
+                             <label for="t-option">Tips</label>
 
-  <form method="post" action="">
-    <textarea placeholder='Subject' rows="1" cols="60" name="blogPostSubject"></textarea>
-<br>
-    <textarea rows="10" cols="60" name="blogPostText"></textarea>
-<br>
-    <input type="submit" id="submitButton" value= "Submit" class="dropbtn"/>
+                </div>
 
-  </form>
-    <script src="resources/main_html.js"></script>
+                <textarea rows="10" cols="60" name="blogPostText"></textarea>
+            <br>
+                <input type="submit" id="submitButton" value= "Submit" class="dropbtn"/>
 
-  </body></center>
+              </form>
+
+              </center>
+
+            </div>
+
+          <script src="resources/main_html.js"></script>
+
+          </div>
+  </body>
 </html>
