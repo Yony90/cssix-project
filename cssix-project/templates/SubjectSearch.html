@@ -55,7 +55,16 @@
 
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
-
+  #redMenuBar{
+    background-color: red;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  #mainPageTitle{
+    display: inline;
+    margin-left: 5em;
+    font-family: sans-serif;
+  }
   #greyback{
     background-color: grey;
     margin-top: 1em;
@@ -71,10 +80,12 @@
   </style>
   <body>
     <div id="centerBox">
-          <input type="button" value="Menu" class="dropbtn" onclick="window.location.href='/'"/>
+      <div id="redMenuBar">
+          <input type="button" value="Home Page" class="dropbtn" onclick="window.location.href='/'"/>
+      <h1 id="mainPageTitle"> The Resource Page </h1>
+      </div> <!-- redMenuBar -->
             <center><img src={{ pngLink }} height="128" ></center>
             <center>
-              <div>
 
           <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Resources</button>
@@ -88,15 +99,21 @@
 
 
 
+
+
+
             </center>
 
             <div id="greyback">
               <center>
-                <ul>
+                <h1> Search Result </h1>
+                <hr>
+                <br>
                   {% for text in textList %}
-                    <li> {{ text.text }} </li>
+                    <h3> {{ text.language }}  {{ text.subject }} </h3>
+                    <p> {{ text.text }} </p>
                   {% endfor %}
-              </ul>
+
             </center>
             </div>
           </div>

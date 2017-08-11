@@ -32,38 +32,50 @@ class MainHandler(webapp2.RequestHandler):
 
     def post(self):
         #Post info to DataStore
-        blogPostInfo = BlogPost(subject=self.request.get('blogPostSubject'),text=self.request.get('blogPostText'))
-        blogPostInfo.put()
-        #Redirect back to main page to avoid blank page
-        self.redirect('/')
+        languageList = [str(self.request.get('pythonSelector')),str(self.request.get('cplusplusSelector')), str(self.request.get('javascriptSelector')) ]
+        resourceString = [str(self.request.get('articleSelector')),str(self.request.get('videoSelector')),str(self.request.get('bookSelector'))]
+
+        for lang in languageList:
+            if lang is not "":
+                for res in resourceString:
+                    if res is not "":
+                        blogPostInfo = BlogPost(language=lang, subject=res, text=self.request.get('blogPostText'))
+                        blogPostInfo.put()
+                        self.redirect('/')
+                    else:
+                        self.redirect('/')
+            else:
+                self.redirect('/')
 
 class SecondHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/SubjectSearch.html')
         #grab language from GET
         lang = self.request.get('lang')
+
+
         #set up dictionary to mae dynamic template
         lang_info = {
           'python': {
-             'lang': 'Python',
+             'lang': 'python',
              'pngLink': 'https://www.python.org/static/img/python-logo.png',
              'subjectList': [],
              'textList': [],
 
           },
           'cplusplus': {
-             'lang': 'C++',
+             'lang': 'cplusplus',
              'pngLink': "http://vdksoft.github.io/signals/assets/img/c-logo.png",
              'subjectList': [],
              'textList': [],
 
           },
           'javascript': {
-             'lang': 'JavaScript',
+             'lang': 'javascript',
              'pngLink': "http://dev.brackets.io/preso/intro/assets/js.jpg",
              'subjectList': [],
              'textList': [],
-             
+
           }
         }
         #create sub-dictionary from lang_info dicitonary
@@ -71,12 +83,13 @@ class SecondHandler(webapp2.RequestHandler):
 
         #create query and filter
         items_query = BlogPost.query()
-        test = items_query.filter(subjectInfo['lang'] == BlogPost.subject)
+        test = items_query.filter(subjectInfo['lang'] == BlogPost.language)
         items = test.fetch()
 
         for item in items:
             subjectInfo["textList"].append(item)
 
+        print subjectInfo
 
         # query_filtered = items.filter("subject IN", lang)
         # for item in items:

@@ -104,9 +104,7 @@
 #containRes{
   margin-right: 5em;
 }
-#resCheckboxes{
-  margin-left: 3em;
-}
+
   </style>
 
 
@@ -140,29 +138,23 @@
               <form method="post" action="">
                 <div class="container">
                             <h2 id ="containLang">Language</h2>
-                            <input type="checkbox" id="a-option" name="selector">
-                            <label for="f-option">Python</label>
 
-                            <input type="checkbox" id="l-option" name="selector">
-                            <label for="f-option">C++</label>
-
-                            <input type="checkbox" id="o-option" name="selector">
-                            <label for="f-option" >JavaScript</label>
+                            <input type="radio" id="a-option" name="pythonSelector" value="python">
+                            <label for="a-option">Python</label>
+                            <input type="radio" id="l-option" name="cplusplusSelector" value="cplusplus">
+                            <label for="l-option">C++</label>
+                            <input type="radio" id="o-option" name="javascriptSelector" value="javascript">
+                            <label for="o-option" >JavaScript</label>
 
                              <h2 id = "containRes">Resource</h3>
+
                              <div id="resCheckboxes">
-                             <input type="checkbox" id="k-option" name="selector" >
-                             <label for="f-option">Articles</label>
-
-                             <input type="checkbox" id="s-option" name="selector">
-                             <label for="s-option">Videos</label>
-
-
-                             <input type="checkbox" id="t-option" name="selector">
-                             <label for="t-option">Tips</label>
-
-                             <input type="checkbox" id="p-option" name="selector">
-                             <label for="p-option">Books</label>
+                             <input type="checkbox" id="k-option" name="articleSelector" value="article" >
+                             <label for="k-option">Article</label>
+                             <input type="checkbox" id="s-option" name="videoSelector" value="video">
+                             <label for="s-option">Video</label>
+                             <input type="checkbox" id="p-option" name="bookSelector" value="book">
+                             <label for="p-option">Book</label>
                            </div>
 
                 </div>
