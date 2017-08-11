@@ -87,12 +87,12 @@
   }
 #redMenuBar{
   background-color: red;
-  padding: 1em;
+  padding: 2em;
 }
 #mainPageTitle{
-  display: inline;
   font-family: sans-serif;
-  font-size: 6
+  margin: 0 auto;
+  padding-right: 5em;
 }
 .container{
   margin-right: 33em;
@@ -103,6 +103,9 @@
 #containRes{
   margin-right: 5em;
 }
+#searchLan{
+  float: left;
+}
 
   </style>
 
@@ -110,17 +113,16 @@
   <body>
       <div id="centerBox">
         <div id="redMenuBar">
-          <div class="dropdown" id='mainPageTitle'>
-
-            <button onclick="myFunction()" class="dropbtn">Search Languages</button>
+            <button onclick="myFunction()" class="dropbtn" id="searchLan">Search Languages</button>
             <div id="myDropdown" class="dropdown-content">
               <a href ="/resources?lang=python">Python</a>
               <a href="/resources?lang=cplusplus">C++</a>
               <a href="/resources?lang=javascript">JavaScript</a>
             </div>
 
-          </div> <!-- dropdown -->
-            <h1>Coodle</h1>
+
+        <h1 id="mainPageTitle">Coodle</h1>
+
           </div><!-- redMenuBar -->
 
 
@@ -138,11 +140,11 @@
                 <div class="container">
                             <h2 id ="containLang">Language</h2>
 
-                            <input type="radio" id="a-option" name="pythonSelector" value="python">
+                            <input type="checkbox" id="a-option" name="pythonSelector" value="python">
                             <label for="a-option">Python</label>
-                            <input type="radio" id="l-option" name="cplusplusSelector" value="cplusplus">
+                            <input type="checkbox" id="l-option" name="cplusplusSelector" value="cplusplus">
                             <label for="l-option">C++</label>
-                            <input type="radio" id="o-option" name="javascriptSelector" value="javascript">
+                            <input type="checkbox" id="o-option" name="javascriptSelector" value="javascript">
                             <label for="o-option" >JavaScript</label>
 
                              <h2 id = "containRes">Resource</h3>
@@ -165,6 +167,7 @@
                 <input type="submit" id="submitButton" value= "Submit" class="dropbtn"/>
 
               </form>
+              <hr>
 
               </center>
 

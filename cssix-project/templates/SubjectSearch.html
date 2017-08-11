@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Python</title>
     <link rel="stylesheet" type="text/css" href="resources/subject_search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <style>
   body {
@@ -57,13 +58,13 @@
   .show {display:block;}
   #redMenuBar{
     background-color: red;
-    padding: 1em;
+    padding: 2em;
     margin-bottom: 2em;
   }
   #mainPageTitle{
-    display: inline;
-    margin-left: 5em;
     font-family: sans-serif;
+    color: white;
+    display: inline;
   }
   #greyback{
     background-color: grey;
@@ -77,31 +78,37 @@
     margin: 0em 10em 0em 10em;
     padding: 1em 1em 9.25em 1em;
   }
+
+#resButton{
+  float: right;
+}
+#homePage{
+  float: left;
+}
+
   </style>
+
   <body>
     <div id="centerBox">
       <div id="redMenuBar">
-          <input type="button" value="Home Page" class="dropbtn" onclick="window.location.href='/'"/>
-      <h1 id="mainPageTitle"> The Resource Page </h1>
-      </div> <!-- redMenuBar -->
-            <center><img src={{ pngLink }} height="128" ></center>
-            <center>
-
-          <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Resources</button>
+            <input type="button" value="Home Page" class="dropbtn" id="homePage" onclick="window.location.href='/'"/>
+            <button onclick="myFunction()" class="dropbtn" id="resButton">Resources</button>
             <div id="myDropdown" class="dropdown-content">
-        <a href ="{{pcj_articles}}">Articles </a>
-        <a href="{{pcj_videos}}">Videos </a>
-        <a href="{{pcj_books}}">Books</a>
+              <a href ="/">Articles </a>
+              <a href="/">Videos </a>
+              <a href="/">Books</a>
             </div>
-          </div>
+
+
+
+          <center>  <h1 id="mainPageTitle"> Coodle </h1> </center>
 
 
 
 
+        </div> <!-- redMenuBar -->
 
-
-            </center>
+          <center><img src={{ pngLink }} height="128" ></center>
 
             <div id="greyback">
               <center>
@@ -109,7 +116,7 @@
                 <hr>
                 <br>
                   {% for text in textList %}
-                    <h3> {{ text.language }}  {{ text.subject }} </h3>
+                    <h3 class="dropdown"> {{ text.language }}</h3> <i class="fa fa-code"></i> <h3 class = "dropdown">  {{ text.subject }} </h3>
                     <p> {{ text.text }} </p>
                   {% endfor %}
 
